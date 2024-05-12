@@ -5,7 +5,7 @@ import { RouterView, useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const active = ref(route.name)
+const active = ref(route.name as string)
 
 watch(active, (val) => {
   router.push({ name: val! })

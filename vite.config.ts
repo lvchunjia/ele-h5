@@ -10,6 +10,17 @@ import { VantResolver } from '@vant/auto-import-resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8000'
+      },
+      '/imgs': {
+        target: 'http://localhost:8000'
+      }
+    }
+  },
   plugins: [
     vue(),
     AutoImport({
